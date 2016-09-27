@@ -23,13 +23,13 @@
 ## Create your facebook page
 * [Create your page](https://www.facebook.com/pages/create/?ref_type=logout_gear).
 
- [facebook]: https://git.recast.ai/tutorials/messenger/raw/4a923ca44b99881e6123f98c0b22fff189c03663/ressources/S%C3%A9lection_021.png "Creating you page"
+ [facebook]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_021.png "Creating you page"
 
 ![alt text][facebook]
 * Choose the category of your page.
 * Fill out the Facebook requirements step by step.
 
-[facebook-set-up]: https://git.recast.ai/tutorials/messenger/raw/4a923ca44b99881e6123f98c0b22fff189c03663/ressources/S%C3%A9lection_022.png "Steup of your page"
+[facebook-set-up]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_022.png "Steup of your page"
 
 ![alt text][facebook-set-up]
 
@@ -38,19 +38,19 @@
 * Log on to your Facebook Developers account.
 * Create a new Facebook app.
 
-[facebook-first]: https://git.recast.ai/tutorials/messenger/raw/feature/messenger/ressources/S%C3%A9lection_028.png "first page"
+[facebook-first]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_028.png "first page"
 ![alt text][facebook-first]
 
 
 * Get your app secret and ID [Dashboard](https://developers.facebook.com/apps/258158857911674/dashboard/).
 
-[facebook-app]: https://git.recast.ai/tutorials/messenger/raw/5478652c54e637582a9d910b0c20bf4a92bc4fe3/ressources/S%C3%A9lection_025.png "Creating you page"
+[facebook-app]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_025.png  "Creating you page"
 
 ![alt text][facebook-app]
 
 * Get your page Token [Messanger](https://developers.facebook.com/apps/258158857911674/messenger/).
 
-[facebook-pageToken]: https://git.recast.ai/tutorials/messenger/raw/5478652c54e637582a9d910b0c20bf4a92bc4fe3/ressources/S%C3%A9lection_026.png "Creating you page"
+[facebook-pageToken]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_026.png "Creating you page"
 
 ![alt text][facebook-pageToken]
 
@@ -112,13 +112,13 @@ npm start
 ![alt text][webhook]
 * Subscribe your page to the webhook you just created.
 
-[suscribe]: https://git.recast.ai/tutorials/messenger/raw/06c2447e6a7f6b0bf4aa7e45f93cac4d0d4ae6a8/ressources/S%C3%A9lection_024.png "Subscribe page"
+[suscribe]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_024.png "Subscribe page"
 
 ![alt text][suscribe]
 
 ## Result
 
-[result]: https://git.recast.ai/tutorials/messenger/raw/51ce277bbc3a44aee1ec96bbdce7e6ca909a57b9/ressources/S%C3%A9lection_023.png
+[result]: https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_023.png
 
 ![alt text][result]
 
