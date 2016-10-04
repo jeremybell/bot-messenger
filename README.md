@@ -94,7 +94,7 @@ module.exports = config
 
 ```
 
-## Launching your server
+## Launching your Bot
 
 * make sure to have ngrok launched and the correct URL in you config file.
 
