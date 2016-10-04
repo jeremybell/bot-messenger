@@ -1,7 +1,7 @@
 import express from 'express'
 import config from './../config.js'
 import bodyParser from 'body-parser'
-import { botFunction } from './index.js'
+import { botFunction } from './bot.js'
 
 const facebookConfig = {
   appSecret: config.appSecret,
