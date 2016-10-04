@@ -56,7 +56,7 @@
 
 ## Start your bot in local
 ```bash
-git clone "the link of the repo when created"
+git clone https://github.com/RecastAI/bot-messenger.git
 ```
 
 #### Ngrok
@@ -78,7 +78,7 @@ git clone "the link of the repo when created"
 * Copy your serverURL  `ngrok https url`
 
 ```bash
-vim src/config.js
+vim config.js
 ```
 ```javascript
 const config = {}
