@@ -24,7 +24,7 @@ function sendMessage(messageData) {
 */
 
 function replyMessage(recipientId, messageText) {
-  let messageData = {
+  const messageData = {
     recipient: {
       id: recipientId,
     },
@@ -35,8 +35,8 @@ function replyMessage(recipientId, messageText) {
   sendMessage(messageData)
 }
 
-function replyButton (recipientId, option) {
-  let messageData = {
+function replyButton(recipientId, option) {
+  const messageData = {
     recipient: {
       id: recipientId,
     },
