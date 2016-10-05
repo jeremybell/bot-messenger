@@ -1,7 +1,7 @@
 import express from 'express'
 import config from './../config.js'
 import bodyParser from 'body-parser'
-import { botFunction } from './bot.js'
+import { handleMessage } from './bot.js'
 
 const facebookConfig = {
   appSecret: config.appSecret,
@@ -43,7 +43,7 @@ app.post('/webhook', (req, res) => {
     data.entry.forEach(pageEntry => {
       pageEntry.messaging.forEach(messagingEvent => {
         if (messagingEvent.message) {
-          botFunction(messagingEvent)
+          handleMessage(messagingEvent)
         }
       })
     })
