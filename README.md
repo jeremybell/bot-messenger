@@ -124,7 +124,7 @@ npm start
 
 ## Your bot
 * All you need for you bot is in the index.js file. The call to Recast.AI is is already done.
-* ```client.textConverse(message.body, { converseToken: message.chatid })``` To use this method you need to past your text, and the id of your chat to create for each users a specific interaction with your bot.
+* ```client.textConverse(message.body, { converseToken: senderID })``` To use this method you need to past your text, and the id of your chat to create for each users a specific interaction with your bot.
 * ```const reply``` To get the first reply of your bot.
 * ```const replies``` To get an array of all your replies
 * ``` const action``` Get the object action. You can use 'action.done' to trigger a specification action when it's at true.
