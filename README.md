@@ -1,4 +1,4 @@
-# Integration facebook messenger to Recast.AI bot
+# Start coding your bot: Recast.AI + Facebook messenger
 
 * Here, you'll learn how to build a bot with Facebook Messenger and Recast.AI.
 * If you don't know how to use Recast.AI, you can check this SDK first:  [Recast.AI-nodejs-SDK](https://github.com/RecastAI/SDK-NodeJs)
