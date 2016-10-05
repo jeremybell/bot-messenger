@@ -123,13 +123,17 @@ npm start
 ![alt text][result]
 
 ## Your bot
-* All you need for you bot is in the index.js file. The call to Recast.AI is is already done.
-* ```client.textConverse(message.body, { converseToken: senderID })``` To use this method you need to past your text, and the id of your chat to create for each users a specific interaction with your bot.
-* ```const reply``` To get the first reply of your bot.
-* ```const replies``` To get an array of all your replies
-* ``` const action``` Get the object action. You can use 'action.done' to trigger a specification action when it's at true.
-* replyMessage to send a basic text message.
-* replyButton to send a basic button, if you whant a more complete button I advise to check the function replyButton in the bot.js file && the [Faceboook doc for button] (https://developers.facebook.com/docs/messenger-platform/send-api-reference#message).
+
+#### SDK usage
+* All you need for you bot is in the bot.js file. The call to Recast.AI is already done.
+* ```client.textConverse(message.body, { converseToken: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
+* ```res.reply()``` To get the first reply of your bot.
+* ```res.replies``` To get an array of all your replies.
+* ``` res.action``` Get the object action. When an action is complete you will have the ```action.done = true ``` and you will be able to trigger a specific behavior.
+
+#### Start-kit helpers
+* ```replyMessage(sendeID,YOUR_TEXT)``` to send a basic text message.
+* ```replyButton(senderID, options)``` to send a basic button, if you whant a more complete button I advise to check the function replyButton in the bot.js file && the [Faceboook doc for button] (https://developers.facebook.com/docs/messenger-platform/send-api-reference#message).
 
 ```javascript
 function botFunction(event) {
@@ -174,3 +178,25 @@ Henri Floren - Recast.AI
 henri.floren@recast.ai
 
 You can follow us on Twitter at [@recastai](https://twitter.com/recastai) for updates and releases.
+
+## License
+
+Copyright (c) [2016] [Recast.AI](https://recast.ai)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
