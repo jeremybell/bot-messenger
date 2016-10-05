@@ -13,7 +13,7 @@ function handleMessage(event) {
       const reply = res.reply()               /* To get the first reply of your bot. */
       const replies = res.replies             /* An array of all your replies */
       const action = res.action               /* Get the object action. You can use 'action.done' to trigger a specification action when it's at true. */
-    
+      
       if (!reply) {
         const options = {
           messageText: null,
@@ -24,11 +24,12 @@ function handleMessage(event) {
         }
         replyButton(senderID, options)        /* to reply a button */
       } else {
-       if (action && action.done === true) {
-         console.log('action is done')
-        // Use external services: use res.memory('knowledge') if you got a knowledge from this action
-       }
-       replies.forEach(rep => replyMessage(senderID, rep))
+        if (action && action.done === true) {
+          console.log('action is done')
+          // Use external services: use res.memory('knowledge') if you got a knowledge from this action
+        }
+        replies.forEach(rep => replyMessage(senderID, rep))
+      }
     }).catch(err => {
       console.log(err)
     })
