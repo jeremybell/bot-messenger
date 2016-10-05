@@ -4,7 +4,7 @@ import { Client } from 'recastai'
 
 const client = new Client(config.recastToken, config.language)
 
-function botFunction(event) {
+function handleMessage(event) {
   const senderID = event.sender.id
   const messageText = event.message.text
   const messageAttachments = event.message.attachments
@@ -13,22 +13,22 @@ function botFunction(event) {
       const reply = res.reply()               /* To get the first reply of your bot. */
       const replies = res.replies             /* An array of all your replies */
       const action = res.action               /* Get the object action. You can use 'action.done' to trigger a specification action when it's at true. */
-
-      console.log(`reply: ${reply}`)
-      console.log(`replies: ${replies}`)
-      console.log(`action: ${action}`)
-      if (reply) {
-        replyMessage(senderID, reply)         /* to reply a text message */
-      } else {
-        const option = {
+    
+      if (!reply) {
+        const options = {
           messageText: null,
           buttonTitle: 'My first button',    /* Option of your button. */
           buttonUrl: 'https://recast.ai/',   /* If you like more option check out ./facebook.js the function replyButton, and look up */
           buttonType: 'web_url',             /* the facebook doc for button https://developers.facebook.com/docs/messenger-platform/send-api-reference#message */
-          elementsTitle: 'Click on me',
+          elementsTitle: 'I don\'t get it :(',
         }
-        replyButton(senderID, option)        /* to reply a button */
-      }
+        replyButton(senderID, options)        /* to reply a button */
+      } else {
+       if (action && action.done === true) {
+         console.log('action is done')
+        // Use external services: use res.memory('knowledge') if you got a knowledge from this action
+       }
+       replies.forEach(rep => replyMessage(senderID, rep))
     }).catch(err => {
       console.log(err)
     })
@@ -37,5 +37,5 @@ function botFunction(event) {
   }
 }
 module.exports = {
-  botFunction,
+  handleMessage,
 }
