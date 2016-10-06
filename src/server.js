@@ -52,5 +52,5 @@ app.post('/webhook', (req, res) => {
 })
 
 app.listen(app.get('port'), () => {
-  console.log('Are bot is running on port', app.get('port'))
+  console.log('Our bot is running on port', app.get('port'))
 })
