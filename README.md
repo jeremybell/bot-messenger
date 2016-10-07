@@ -72,10 +72,8 @@ git clone https://github.com/RecastAI/bot-messenger.git
 ## Complete the config.js
 
 * Copy your Recast.AI `Recast.AI access token`
-* Copy your appSecret `app secret of your Facebook app`
 * Copy your page access Token `Token of your Page`
 * Copy your validationToken `The token of your Webhook`
-* Copy your serverURL  `ngrok https url`
 
 ```bash
 vim config.js
@@ -83,10 +81,8 @@ vim config.js
 ```javascript
 const config = {}
 
-config.appSecret = 'APP_SECERT'
 config.pageAccessToken = 'PAGE_TOKEN'
 config.validationToken = 'ABCD1234'
-config.serverURL = 'https://*******.ngrok.io'
 config.recastToken = 'RECAST_TOKEN'
 config.language = 'en'
 
@@ -126,7 +122,7 @@ npm start
 
 #### SDK usage
 * All you need for you bot is in the bot.js file. The call to Recast.AI is already done.
-* ```client.textConverse(message.body, { converseToken: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
+* ```client.textConverse(message.body, { conversation_token: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
 * ```res.reply()``` To get the first reply of your bot.
 * ```res.replies``` To get an array of all your replies.
 * ``` res.action``` Get the object action. When an action is complete you will have the ```action.done = true ``` and you will be able to trigger a specific behavior.
@@ -141,11 +137,11 @@ function handleMessage(event) {
   const messageText = event.message.text
   const messageAttachments = event.message.attachments
   if (messageText) {
-    client.textConverse(messageText, { converseToken: senderID }).then((res) => {
+    client.textConverse(messageText, { conversation_token: senderID }).then((res) => {
       const reply = res.reply()               /* To get the first reply of your bot. */
       const replies = res.replies             /* An array of all your replies */
       const action = res.action               /* Get the object action. You can use 'action.done' to trigger a specification action when it's at true. */
-    
+
       if (!reply) {
         const options = {
           messageText: null,
