@@ -4,10 +4,8 @@ import bodyParser from 'body-parser'
 import { handleMessage } from './bot.js'
 
 const facebookConfig = {
-  appSecret: config.appSecret,
   pageAccessToken: config.pageAccessToken,
   validationToken: config.validationToken,
-  serverURL: config.serverUrl,
 }
 
 /*
