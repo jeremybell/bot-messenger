@@ -122,7 +122,7 @@ npm start
 
 #### SDK usage
 * All you need for you bot is in the bot.js file. The call to Recast.AI is already done.
-* ```client.textConverse(message.body, { conversation_token: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
+* ```client.textConverse(message.body, { conversationToken: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
 * ```res.reply()``` To get the first reply of your bot.
 * ```res.replies``` To get an array of all your replies.
 * ``` res.action``` Get the object action. When an action is complete you will have the ```action.done = true ``` and you will be able to trigger a specific behavior.
