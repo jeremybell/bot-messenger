@@ -137,7 +137,7 @@ function handleMessage(event) {
   const messageText = event.message.text
   const messageAttachments = event.message.attachments
   if (messageText) {
-    client.textConverse(messageText, { conversation_token: senderID }).then((res) => {
+    client.textConverse(messageText, { conversationToken: senderID }).then((res) => {
       const reply = res.reply()               /* To get the first reply of your bot. */
       const replies = res.replies             /* An array of all your replies */
       const action = res.action               /* Get the object action. You can use 'action.done' to trigger a specification action when it's at true. */

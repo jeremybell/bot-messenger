@@ -12,7 +12,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "recastai": "git+https://github.com/RecastAI/SDK-NodeJS.git#develop",
+    "recastai": "^2.2.1",
     "request": "^2.75.0"
   },
   "devDependencies": {
