@@ -152,11 +152,18 @@ function handleMessage(event) {
         }
         replyButton(senderID, options)        /* to reply a button */
       } else {
-       if (action && action.done === true) {
-         console.log('action is done')
-        // Use external services: use res.memory('knowledge') if you got a knowledge from this action
-       }
-       replies.forEach(rep => replyMessage(senderID, rep))
+        if (action && action.done === true) {
+          console.log('action is done')
+          // Use external services: use res.memory('knowledge') if you got a knowledge from this action
+        }
+        let promise = Promise.resolve()
+        replies.forEach(rep => {
+          promise = promise.then(() => replyMessage(senderID,rep))
+        })
+        promise.then(() => {
+          console.log('ok')
+        })
+      }
     }).catch(err => {
       console.log(err)
     })
