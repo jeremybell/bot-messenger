@@ -28,7 +28,13 @@ function handleMessage(event) {
           console.log('action is done')
           // Use external services: use res.memory('knowledge') if you got a knowledge from this action
         }
-        replies.forEach(rep => replyMessage(senderID, rep))
+        let promise = Promise.resolve()
+        replies.forEach(rep => {
+          promise = promise.then(() => replyMessage(senderID,rep))
+        })
+        promise.then(() => {
+          console.log('ok')
+        })
       }
     }).catch(err => {
       console.log(err)

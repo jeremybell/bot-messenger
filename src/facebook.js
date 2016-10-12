@@ -7,32 +7,44 @@ import request from 'request'
 */
 
 function sendMessage(messageData) {
-  request({
-    uri: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: { access_token: config.pageAccessToken },
-    method: 'POST',
-    json: messageData,
-  }, (error, response) => {
-    if (!error && response.statusCode === 200) {
-      console.log('All good job is done')
-    }
+  return new Promise((resolve, reject) => {
+    request({
+      uri: 'https://graph.facebook.com/v2.6/me/messages',
+      qs: { access_token: config.pageAccessToken },
+      method: 'POST',
+      json: messageData,
+    }, (error, response) => {
+      if (!error && response.statusCode === 200) {
+        console.log('All good job is done')
+        resolve()
+      } else {
+        reject()
+      }
+    })
   })
 }
 
-/*
+/*``
 * type of message to send back
 */
 
 function replyMessage(recipientId, messageText) {
-  const messageData = {
-    recipient: {
-      id: recipientId,
-    },
-    message: {
-      text: messageText,
-    },
-  }
-  sendMessage(messageData)
+  return new Promise((resolve, reject) => {
+
+    const messageData = {
+      recipient: {
+        id: recipientId,
+      },
+      message: {
+        text: messageText,
+      },
+    }
+    sendMessage(messageData).then(() => {
+      resolve()
+    }).catch(() => {
+      reject()
+    })
+  })
 }
 
 function replyButton(recipientId, option) {
