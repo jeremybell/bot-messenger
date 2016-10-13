@@ -26,7 +26,7 @@ function handleMessage(event) {
       } else {
         if (action && action.done === true) {
           console.log('action is done')
-          // Use external services: use res.memory('knowledge') if you got a knowledge from this action
+          // Use external services: use res.memory('notion') if you got a notion from this action
         }
         let promise = Promise.resolve()
         replies.forEach(rep => {
