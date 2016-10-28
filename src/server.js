@@ -40,13 +40,9 @@ app.post('/webhook', (req, res) => {
   if (data.object === 'page') {
     data.entry.forEach(pageEntry => {
       pageEntry.messaging.forEach(messagingEvent => {
-        if (req.body.entry[0].messaging) {
-          if (req.body.entry[0].messaging[0].message) {
-            if (!req.body.entry[0].messaging[0].message.is_echo) {
-              if (messagingEvent.message) {
-                handleMessage(messagingEvent)
-              }
-            }
+        if (messagingEvent.message) {
+          if (!messagingEvent.message.is_echo) {
+            handleMessage(messagingEvent)
           }
         }
       })
