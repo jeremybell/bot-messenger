@@ -9,7 +9,7 @@ const facebookConfig = {
 }
 
 /*
-* Creaction of the server
+* Creation of the server
 */
 
 const app = express()
@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 5000)
 app.use(bodyParser.json())
 
 /*
-* connect your webhhook
+* connect your webhook
 */
 
 app.get('/webhook', (req, res) => {
