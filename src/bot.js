@@ -34,6 +34,8 @@ function handleMessage(event) {
         })
         promise.then(() => {
           console.log('ok')
+        }).catch(err => {
+          console.log(err)
         })
       }
     }).catch(err => {
