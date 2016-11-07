@@ -18,7 +18,7 @@ function sendMessage(messageData) {
         console.log('All good job is done')
         resolve()
       } else {
-        reject()
+        reject(error)
       }
     })
   })
@@ -42,8 +42,7 @@ function replyMessage(recipientId, messageText) {
     sendMessage(messageData).then(() => {
       resolve()
     }).catch( err => {
-      console.log(err)
-      reject()
+      reject(err)
     })
   })
 }
