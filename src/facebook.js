@@ -41,7 +41,7 @@ function replyMessage(recipientId, messageText) {
     }
     sendMessage(messageData).then(() => {
       resolve()
-    }).catch((err) => {
+    }).catch( err => {
       console.log(err)
       reject()
     })
