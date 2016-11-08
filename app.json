@@ -1,0 +1,19 @@
+{
+  "name": "greetings-bot",
+  "description": "a test bot using Recast.AI and FB Messenger",
+  "repository": "https://github.com/jeremybell/bot-messenger",
+  "env": {
+    "WIT_TOKEN": {
+      "description": "Server Access Token from wit.ai (see your wit app settings).",
+      "required": true
+    },
+    "FB_PAGE_TOKEN": {
+      "description": "Facebook Page Token from https://developers.facebook.com/apps/",
+      "required": true
+    },
+    "FB_VERIFY_TOKEN": {
+      "description": "Facebook verification Token. You can make it up.",
+      "required": false
+    }
+  }
+}
